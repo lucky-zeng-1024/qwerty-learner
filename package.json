@@ -59,13 +59,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "start": "vite",
-    "build": "cross-env CI=false vite build --base=./",
+    "start": "vite preview --host --port $PORT",
+    "build": "vite build",
+    "vercel-build": "vite build && mv dist public",
     "test": "echo \"No tests\"",
     "test:e2e": "playwright test",
     "lint": "eslint .",
-    "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "prettier": "prettier --write ."
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
